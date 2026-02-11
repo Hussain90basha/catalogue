@@ -40,10 +40,11 @@ pipeline {
         stage('Build Image') { 
             steps {
                 script{
-                    sh """
-                        docker build -t catalogue:${appVersion} . 
-                        docker images
-                    """
+                    withAws(region:'us-east-1', credentials:'aws-creds') {
+                        sh """
+
+                        """
+                    }
                 }
                  
             }
